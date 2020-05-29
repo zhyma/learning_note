@@ -1,0 +1,4 @@
+- [A reinforcement learning mindmap](http://zhyma.github.io/learning_note/rl), created by Claus. The original file can be find [here](https://github.com/clamesc/reinforcement-learning-mindmap)
+- MPC mindmap [here](http://www.zhaoyuanma.me/learning_note/mindmap/mpc)
+- Powered by [VNote](https://tamlok.github.io/vnote/)
+- Mindmaps are edited by [Freemind](http://freemind.sourceforge.net/wiki/index.php/Main_Page), visualized by using [jsMind](https://github.com/hizzgdev/jsmind)

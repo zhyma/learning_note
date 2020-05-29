@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jsMind</title>
+    <link type="text/css" rel="stylesheet" href="../style/jsmind.css" />
+    <style type="text/css">
+        #jsmind_container{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border:solid 0px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+    </style>
+</head>
+<body>
+<div id="jsmind_container"></div>
+<script type="text/javascript" src="../js/jsmind.js"></script>
+<script src="rl.mm"></script>
+<script type="text/javascript">
+    function load_jsmind(){
+        let mind;
+        fetch('https://raw.githubusercontent.com/zhyma/learning_note/master/mindmap/mpc.mm')
+          .then(response => response.text())
+          .then((data) => {
+            mind = {
+            "meta":{
+                "name":"example",
+                "author":"hizzgdev@163.com",
+                "version":"0.2"
+            },
+            "format":"freemind",
+            "data": data
+            };
+            var options = {
+                container:'jsmind_container',
+                editable:true,
+                theme:'primary'
+            }
+            var jm = jsMind.show(options,mind);
+            // jm.set_readonly(true);
+            // var mind_data = jm.get_data();
+            // alert(mind_data); 
+          })
+        
+    }
+
+    load_jsmind();
+</script>
+</body>
+</html>
