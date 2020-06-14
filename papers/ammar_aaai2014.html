@@ -399,6 +399,9 @@ span.modal-close:hover, span.modal-close:focus { color: rgb(34, 34, 34); }
 .mermaid-diagram .titleText { text-anchor: middle; font-size: 18px; fill: black; }
 .mermaid-diagram .node text { font-family: "trebuchet ms", verdana, arial; font-size: 14px; }
 .mermaid-diagram div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: "trebuchet ms", verdana, arial; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
+.hljs-ln { border-collapse: collapse; }
+.hljs-ln td { padding: 0px; }
+.hljs-ln-n::before { content: attr(data-line-number); }
 .CtxtMenu_InfoClose { top: 0.2em; right: 0.2em; }
 .CtxtMenu_InfoContent { overflow: auto; text-align: left; font-size: 80%; padding: 0.4em 0.6em; border: 1px inset; margin: 1em 0px; max-height: 20em; max-width: 30em; background-color: rgb(238, 238, 238); white-space: normal; }
 .CtxtMenu_Info.CtxtMenu_MousePost { outline: none; }
@@ -709,7 +712,7 @@ var highlightItemOnlyInOutline = function(id) {
         <div id="outline-content" class="section-nav"></div>
     </div>
     <div id="post-content" class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content">
-    <h1 id="toc_0">An automated measure of MDP similarity for transfer in reinforcement learning<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h1>
+    <h1 id="toc_0"><a href="https://www.seas.upenn.edu/~eeaton/papers/BouAmmar2014Automated.pdf">An automated measure of MDP similarity for transfer in reinforcement learning</a><a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h1>
 <p><big><em>Haitham Bou Ammar et al., AAAI 2014</em></big></p>
 <ul>
 <li><strong>Main idea: measure the similarity between MDPs by using Restricted Boltzmann Machines (RBM) and MDP tuples(s,a,s') as the input.</strong></li>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="generator" content="VNote">
 
-    <title>symbolic_planning</title>
+    <title>basic</title>
     <link rel="icon" href="https://github.com/tamlok/vnote/raw/master/src/resources/icons/vnote.ico">
 
     <style type="text/css">
@@ -712,29 +712,25 @@ var highlightItemOnlyInOutline = function(id) {
         <div id="outline-content" class="section-nav"></div>
     </div>
     <div id="post-content" class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content">
-    <h2 id="toc_0">1. FFRob: Leveraging symbolic planning for efficient task and motion planning<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h2>
-<p><big><em>Caelan Reed Garrett et al.</em></big></p>
+    <h1 id="toc_0">Game theory basic<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h1>
 <ul>
-<li>Related work<br>
-Manipulation planning<br>
-Symbolic planning<br>
-Task and motion planning</li>
+<li>
+<p>Pure strategy vs. mixed strategy<br>
+A mixed strategy is a probability distribution over pure strategies.</p>
+</li>
+<li>
+<p>Nash equilibrium</p>
+<ul>
+<li>Normal form game</li>
+<li>
+<blockquote>
+<p>Nash equilibrium assumes a simultaneous choice of strategies, the advantages of being the leader are not considered.<br>
+----Efficient algorithms to solve Bayesian Stackelberg games for security applications, Paruchuri et al., AAAI 2008</p>
+</blockquote>
+</li>
 </ul>
-<p>Symbolic planning representation: SAS+: equivalent of STRIPS<br>
-**Relaxed evaluation: ignores delete effects<br>
-Condition tests dynamic programming + lazy collision checking<br>
-Search algorithms: any standard search<br>
-Search heuristics</p>
-<h2 id="toc_1">2. Combining task and motion planning: A culprit detection problem<a class="vnote-anchor" href="#toc_1" data-anchor-icon="#"></a></h2>
-<p><big><em>Fabien Lagriffoul et al.</em></big></p>
-<p>CTAMP: Combined Task and Motion Planning<br>
-logical constraints by a task planner based on answer set programming (ASP, Lifschitz, 2008)</p>
-<p>Key components:<br>
-1. geometric reasoner capable of analyzing the cause of geometric failures.<br>
-2. A common language between the geometric reasoner and the task planner to describe the cause of failure other than mere “success/failure”.</p>
-<p>Question: how to find the minimal explanation for geometric failures</p>
-<p>The problem this paper is trying to solve: if a task is not feasible, “explaining” in a geometric way?Benefit: stop searching from high-level (infinite number of unfeasible plans by permuting the temporary locations of blocks, by permuting the order of actions, or by increasing the number of actions)</p>
-<p>Isolating the minimal number of factors explaining the failure is the culprit detection problem that we propose to solve</p>
+</li>
+</ul>
 
     </div>
 </div>

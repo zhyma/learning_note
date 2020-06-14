@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="generator" content="VNote">
 
-    <title>rl_vs_mpc</title>
+    <title>delete_history</title>
     <link rel="icon" href="https://github.com/tamlok/vnote/raw/master/src/resources/icons/vnote.ico">
 
     <style type="text/css">
@@ -399,6 +399,9 @@ span.modal-close:hover, span.modal-close:focus { color: rgb(34, 34, 34); }
 .mermaid-diagram .titleText { text-anchor: middle; font-size: 18px; fill: black; }
 .mermaid-diagram .node text { font-family: "trebuchet ms", verdana, arial; font-size: 14px; }
 .mermaid-diagram div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: "trebuchet ms", verdana, arial; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
+.hljs-ln { border-collapse: collapse; }
+.hljs-ln td { padding: 0px; }
+.hljs-ln-n::before { content: attr(data-line-number); }
 .CtxtMenu_InfoClose { top: 0.2em; right: 0.2em; }
 .CtxtMenu_InfoContent { overflow: auto; text-align: left; font-size: 80%; padding: 0.4em 0.6em; border: 1px inset; margin: 1em 0px; max-height: 20em; max-width: 30em; background-color: rgb(238, 238, 238); white-space: normal; }
 .CtxtMenu_Info.CtxtMenu_MousePost { outline: none; }
@@ -709,215 +712,33 @@ var highlightItemOnlyInOutline = function(id) {
         <div id="outline-content" class="section-nav"></div>
     </div>
     <div id="post-content" class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content">
-    <h1 id="toc_0">A collection of reviews on MPC vs. RL<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h1>
-<h2 id="toc_1">1. Relations between model predictive control and reinforcement learning<a class="vnote-anchor" href="#toc_1" data-anchor-icon="#"></a></h2>
-<p><big><em>Daniel Gorges, IFAC 2017</em></big></p>
-<ul>
-<li>LQR
+    <h1 id="toc_0">清除历史提交记录<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h1>
 <ol>
-<li>based on Q-learning, convergence proved.</li>
-<li>LQR based on Q-learning vs. LQR based system identification.</li>
-<li>LQR based on actor-critic structures.</li>
-</ol>
+<li>
+<p>Checkout</p>
+<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">git checkout --orphan latest_branch</div></td></tr></tbody></table></code></pre>
 </li>
-<li>Adding constraint:
-<ol>
-<li>Constraint handling has been addressed indirectly by introducing penalties for constraint violations in the cost function (Ernst et al., 2009; Riedmiller, 2012) or indireclty (He and Jagannathan, 2007; Zhang et al., 2009. ?)</li>
-<li>Direct constraint handling has only been investigaed for input constraints (ref?).</li>
-</ol>
+<li>
+<p>Add all the files</p>
+<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">git add -A</div></td></tr></tbody></table></code></pre>
 </li>
-<li>Feasibility of MPC has not been studied for reinforcement elarning</li>
-<li>Synergies between MPC and RL for discrete-time linear time-invariant system with state and input constraints and a quadratic cost function exploiting knowledge. (Sutton et al., 1992)<br>
-<span id="table1">Table 1: a comparison</span></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>MPC</th>
-<th>RL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Model</td>
-<td>required</td>
-<td>not required</td>
-</tr>
-<tr>
-<td>Convexity</td>
-<td>required (usually)</td>
-<td>not required</td>
-</tr>
-<tr>
-<td>adaptivity</td>
-<td>immature (usually based on robustness)</td>
-<td>mature(inherent)</td>
-</tr>
-<tr>
-<td>Online complexity</td>
-<td>high (except explicit and neural MPC)</td>
-<td>low</td>
-</tr>
-<tr>
-<td>offline complexity</td>
-<td>low (except explicit andneural MPC)</td>
-<td>high</td>
-</tr>
-<tr>
-<td>stability theory</td>
-<td>mature (e.g. based on terminal cost)</td>
-<td>immature</td>
-</tr>
-<tr>
-<td>feasibility theory</td>
-<td>mature (e.g. based on terminal constraints)</td>
-<td>immature</td>
-</tr>
-<tr>
-<td>robustness theory</td>
-<td>mature (e.g. based on tubes or ISS)</td>
-<td>immature</td>
-</tr>
-<tr>
-<td>Constraint handling</td>
-<td>mature (inherent)</td>
-<td>immature (except input constraints)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="toc_2">1.1. MPC<a class="vnote-anchor" href="#toc_2" data-anchor-icon="#"></a></h3>
-<ul>
-<li>Consider stage cost and terminal cost</li>
-<li>terminal weight matrix has the solution of the algebraic Riccati equation</li>
-<li>Solution for Finite-horizon optimal control problem (FHOCP): solve by quadratic programming or multi-parametric-QP (mc-QP)</li>
-<li>Solution for Infinite-horizon optimal control problem (IHOCP)</li>
-<li>Stability and Feasibility: guaranteed inherently (IHOCP) or by imposing terminal constraint (FHOCP)</li>
-</ul>
-<h3 id="toc_3">1.2. RL<a class="vnote-anchor" href="#toc_3" data-anchor-icon="#"></a></h3>
-<ul>
-<li>Dynamic programming: value iteration, policy iteration, policy search</li>
-<li>Actor-critic structure with critic neural network and actor neural network</li>
-</ul>
-<h2 id="toc_4">2. Reinforcement learning with model predictive control - recent development<a class="vnote-anchor" href="#toc_4" data-anchor-icon="#"></a></h2>
-<p><big><em>Tri Tran et al., ICOCTA 2019</em></big></p>
-<ul>
-<li>properties: similar to <a href="#table1">Table 1</a>. Additional: both MPC and RL has recursive feasibility.</li>
-<li><a href="gros_tac2020.md">Gros' paper</a> is inspired by Go paper; <a href="#relations-between-model-predictive-control-and-reinforcement-learning">Gorges' paper</a></li>
-</ul>
-<ol>
-<li>Gaussian-Process (GP) learning-based MPC, use offline trained GP model<br>
-Use GP regression to estimate the mean and co-variance as the uncertainty sets for a robust MPC</li>
-<li>Using stage cost of MPC value funtion to approximate the Q-function (<a href="gros_tac2020.md">Gros' paper</a>)</li>
+<li>
+<p>Commit the changes</p>
+<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">git commit -am "commit message"</div></td></tr></tbody></table></code></pre>
+</li>
+<li>
+<p>Delete the branch</p>
+<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">git branch -D master</div></td></tr></tbody></table></code></pre>
+</li>
+<li>
+<p>Rename the current branch to master</p>
+<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">git branch -m master</div></td></tr></tbody></table></code></pre>
+</li>
+<li>
+<p>Finally, force update your repository</p>
+<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">git push -f origin master</div></td></tr></tbody></table></code></pre>
+</li>
 </ol>
-<table>
-<thead>
-<tr>
-<th>Algorithm</th>
-<th>Policy</th>
-<th>Return estimation</th>
-<th>Update constraints</th>
-<th>Data distribution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NFQ</td>
-<td>Discrete 3, deterministic-step Q</td>
-<td>1-step Q</td>
-<td>Bootstrap with old <x-eq class="tex-to-render"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" role="presentation" tabindex="0" ctxtmenu_counter="0" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.023ex;"><defs><path id="MJX-1-TEX-I-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJX-1-TEX-I-3B8"></use></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>θ</mi></math></mjx-assistive-mml></mjx-container></x-eq></td>
-<td>Off-policy fixed apriori</td>
-</tr>
-<tr>
-<td>(D)DQN</td>
-<td>Discrete, deterministic</td>
-<td>1-step Q</td>
-<td>Bootstrap with old <x-eq class="tex-to-render"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" role="presentation" tabindex="0" ctxtmenu_counter="1" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.023ex;"><defs><path id="MJX-2-TEX-I-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJX-2-TEX-I-3B8"></use></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>θ</mi></math></mjx-assistive-mml></mjx-container></x-eq></td>
-<td>Off-policy experience replay</td>
-</tr>
-<tr>
-<td>DDPG</td>
-<td>Continuous, deterministic</td>
-<td>1-step Q</td>
-<td>Bootstrap with old <x-eq class="tex-to-render"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" role="presentation" tabindex="0" ctxtmenu_counter="2" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.023ex;"><defs><path id="MJX-3-TEX-I-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJX-3-TEX-I-3B8"></use></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>θ</mi></math></mjx-assistive-mml></mjx-container></x-eq>, w</td>
-<td>Off-policy experience replay</td>
-</tr>
-<tr>
-<td>TRPO</td>
-<td>Discrete/continuous stochastic</td>
-<td><x-eq class="tex-to-render"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" role="presentation" tabindex="0" ctxtmenu_counter="3" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 1000 453" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-4-TEX-N-221E" d="M55 217Q55 305 111 373T254 442Q342 442 419 381Q457 350 493 303L507 284L514 294Q618 442 747 442Q833 442 888 374T944 214Q944 128 889 59T743 -11Q657 -11 580 50Q542 81 506 128L492 147L485 137Q381 -11 252 -11Q166 -11 111 57T55 217ZM907 217Q907 285 869 341T761 397Q740 397 720 392T682 378T648 359T619 335T594 310T574 285T559 263T548 246L543 238L574 198Q605 158 622 138T664 94T714 61T765 51Q827 51 867 100T907 217ZM92 214Q92 145 131 89T239 33Q357 33 456 193L425 233Q364 312 334 337Q285 380 233 380Q171 380 132 331T92 214Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#MJX-4-TEX-N-221E"></use></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∞</mi></math></mjx-assistive-mml></mjx-container></x-eq>-step Q</td>
-<td>Policy constraint</td>
-<td>On-policy</td>
-</tr>
-<tr>
-<td>PPO</td>
-<td>Discrete/continuous stochastic</td>
-<td>n-step advantage (GAE)</td>
-<td>Clipped objective</td>
-<td>On-policy</td>
-</tr>
-<tr>
-<td>A3C</td>
-<td>Discrete/continuous stochastic</td>
-<td>n-step advantage (GAE)</td>
-<td>-</td>
-<td>On-policy</td>
-</tr>
-<tr>
-<td>ACER</td>
-<td>Discrete/continuous stochastic</td>
-<td>n-step advantage (GAE)</td>
-<td>Average policy network</td>
-<td>On-policy + Off-policy</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Abbreviation</th>
-<th>Full name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NFQ</td>
-<td>Neural Fitted Q iteration</td>
-</tr>
-<tr>
-<td>DDQN</td>
-<td>Double DeepQ-network</td>
-</tr>
-<tr>
-<td>DDPG</td>
-<td>Deep Deterministic Policy Gradient</td>
-</tr>
-<tr>
-<td>GAE</td>
-<td>Generalized Advantage Estimation</td>
-</tr>
-<tr>
-<td>TRPO</td>
-<td>Trust Region Policy Optimisation</td>
-</tr>
-<tr>
-<td>PPO</td>
-<td>Proximal Policy Optimisation</td>
-</tr>
-<tr>
-<td>A3C</td>
-<td>Asynchronous Advantage Actor Critic</td>
-</tr>
-<tr>
-<td>ACER</td>
-<td>Actor Critic with Exprerience Replay</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>MPC is used to deliver an (almost) optimal policy. RL is then considered as an effective tuning tool for MPC</li>
-<li>Using MPC instead of DNN</li>
-</ul>
 
     </div>
 </div>
