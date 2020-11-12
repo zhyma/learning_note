@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="generator" content="VNote">
 
-    <title>vnote_config</title>
+    <title>compile_kinetic_on_18.04</title>
     <link rel="icon" href="https://github.com/tamlok/vnote/raw/master/src/resources/icons/vnote.ico">
 
     <style type="text/css">
@@ -712,15 +712,98 @@ var highlightItemOnlyInOutline = function(id) {
         <div id="outline-content" class="section-nav"></div>
     </div>
     <div id="post-content" class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content">
-    <ul>
-<li>Setting-&gt;Markdown-&gt;Heading sequence配置为enable，2。</li>
-<li>配置MathJax的本地解析：<br>
-在vnote的文件夹下新建一个plugin文件夹，将MathJax-3.0.1解压到文件夹下<br>
-在Setting-&gt;Markdown-&gt;MathJax configuration中配置：<code>file:///.\plugin\MathJax-3.0.1\es5\tex-svg.js</code><br>
-新建一个note/或者打开一个note，在公式上点右键 math setting-&gt; math renderer-&gt;SVG</li>
-<li>配置Graphviz的本地解析：<br>
-在Setting-&gt;Markdown-&gt;Graphvizd executable中配置：<code>.\plugin\Graphviz2.38\bin\dot.exe</code></li>
+    <h2 id="toc_0">1. 在Ubuntu18.04下安装ROS Kinetic（手动编译）<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h2>
+<p><a href="http://wiki.ros.org/kinetic/Installation/Source">http://wiki.ros.org/kinetic/Installation/Source</a></p>
+<blockquote>
+<p>$ sudo apt-get install python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential</p>
+</blockquote>
+<blockquote>
+<p>sudo rosdep init<br>
+rosdep update</p>
+</blockquote>
+<ul>
+<li>Desktop Install (recommended): ROS, rqt, rviz, and robot-generic libraries
+<blockquote>
+<p>$ rosinstall_generator desktop --rosdistro kinetic --deps --wet-only --tar &gt; kinetic-desktop-wet.rosinstall<br>
+$ wstool init -j8 src kinetic-desktop-wet.rosinstall</p>
+</blockquote>
+</li>
 </ul>
+<blockquote>
+<p>$ rosdep install --from-paths src --ignore-src --rosdistro kinetic -y</p>
+</blockquote>
+<ul>
+<li>在编译前修改代码：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>错误</th>
+<th>解决方案</th>
+<th>相关文件/命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fatal error: boost/tr1/unordered_set.hpp: No such file or directory</td>
+<td>Remove tr1</td>
+<td>编辑src/rospack/include/rospack/rospack.h<br><br>编辑src/rospack/src/utils.cpp</td>
+</tr>
+<tr>
+<td>/home/xxx/ros_catkin_ws/src/rospack/src/rospack.cpp:1104:10: error:<br> ‘std::tr1’ has not been declared</td>
+<td>Remove tr1</td>
+<td>编辑src/rospack/src/rospack.cpp<br>std::tr1::unordered_set&lt;Stackage*&gt; top_deps_set;<br><br>编辑src/rospack/include/rospack/rospack.h<br>std::tr1::unordered -&gt; boost::unordered</td>
+</tr>
+<tr>
+<td>ros tf2  error: ‘logWarn’ was not declared in this scope</td>
+<td></td>
+<td>编辑src/geometry2/tf2/src/buffer_core.cpp<br>sed -i 's/logError/CONSOLE_BRIDGE_logError/g'<br>sed -i 's/logWarn/CONSOLE_BRIDGE_logWarn/g'</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>注：最后一个错误，It actually compiles when prefixed with CONSOLE_BRIDGE, i.e. recursively executing the following for all files and log types</li>
+</ul>
+<h2 id="toc_1">2. WIP: Gazebo<a class="vnote-anchor" href="#toc_1" data-anchor-icon="#"></a></h2>
+<p>Full install have trouble with gazebo 7</p>
+<p>Trouble shoot<br>
+Package libgazebo7-dev is not available, but is referred to by another package.<br>
+This may mean that the package is missing, has been obsoleted, or<br>
+is only available from another source<br>
+However the following packages replace it:<br>
+libgazebo9-dev:i386 libgazebo9-dev</p>
+<p>E: Package 'libgazebo7-dev' has no installation candidate<br>
+ERROR: the following rosdeps failed to install<br>
+apt: command [sudo -H apt-get install -y libgazebo7-dev] failed</p>
+<hr>
+<p><a href="http://gazebosim.org/tutorials?tut=install_ubuntu&amp;cat=install">http://gazebosim.org/tutorials?tut=install_ubuntu&amp;cat=install</a></p>
+<ol>
+<li>
+<p>Step 1</p>
+<blockquote>
+<p>sudo sh -c 'echo "deb <a href="http://packages.osrfoundation.org/gazebo/ubuntu-stable">http://packages.osrfoundation.org/gazebo/ubuntu-stable</a> <code>lsb_release -cs</code> main" &gt; /etc/apt/sources.list.d/gazebo-stable.list'</p>
+</blockquote>
+<p>You can check to see if the file was written correctly. For example, in Ubuntu Xenial, you can type:</p>
+<blockquote>
+<p>$ cat /etc/apt/sources.list.d/gazebo-stable.list<br>
+deb <a href="http://packages.osrfoundation.org/gazebo/ubuntu-stable">http://packages.osrfoundation.org/gazebo/ubuntu-stable</a> xenial main</p>
+</blockquote>
+<p>Replace bonic by xenial</p>
+</li>
+<li>
+<p>Setup keys</p>
+<blockquote>
+<p>wget <a href="http://packages.osrfoundation.org/gazebo.key">http://packages.osrfoundation.org/gazebo.key</a> -O - | sudo apt-key add -</p>
+</blockquote>
+</li>
+<li>
+<p>Install Gazebo.<br>
+First update the debian database:</p>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+</li>
+</ol>
 
     </div>
 </div>

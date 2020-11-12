@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="generator" content="VNote">
 
-    <title>ubuntu18.04_note</title>
+    <title>float_precision</title>
     <link rel="icon" href="https://github.com/tamlok/vnote/raw/master/src/resources/icons/vnote.ico">
 
     <style type="text/css">
@@ -712,125 +712,16 @@ var highlightItemOnlyInOutline = function(id) {
         <div id="outline-content" class="section-nav"></div>
     </div>
     <div id="post-content" class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content">
-    <h2 id="toc_0">1. 安装<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h2>
+    <h1 id="toc_0">浮点数精度<a class="vnote-anchor" href="#toc_0" data-anchor-icon="#"></a></h1>
+<h2 id="toc_1">1. 实例1：<a class="vnote-anchor" href="#toc_1" data-anchor-icon="#"></a></h2>
 <ul>
-<li>
-<p>用U盘安装时在启动盘界面应该选有UEFI的那项启动，这样安装时，选磁盘分区类型才会出现EFI System partition。</p>
-</li>
-<li>
-<p>如果BIOS是EFI模式，不能像以前一样将最少只配置"/"根目录和swap分区，必须有一个足够大（如500MB）的空间配置为EFI System partition，安装时不会显示有挂载点。如果没有这个分区，开机将直接进入grub。</p>
-<ul>
-<li>在Grub下用ls列出所有partition</li>
-<li>用set root=(hdX, Y)设定分区</li>
-<li>用set prefix=/boot/grub设定挂载点</li>
-<li>normal引导系统</li>
+<li>开平方的位置不同，使得实际储存的数值大于理论上应得的结果，带入其他函数后因输入越界出现错误<br>
+下例中最后一个b略大于1，导致acos(b)报错</li>
 </ul>
-</li>
-<li>
-<p>注意系统的APT的source有没有被自动修改</p>
-<blockquote>
-<p>deb <a href="http://us.archive.ubuntu.com/ubuntu/">http://us.archive.ubuntu.com/ubuntu/</a> bionic main restricted universe multiverse<br>
-deb <a href="http://us.archive.ubuntu.com/ubuntu/">http://us.archive.ubuntu.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>
-deb <a href="http://us.archive.ubuntu.com/ubuntu/">http://us.archive.ubuntu.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>
-deb <a href="http://security.ubuntu.com/ubuntu">http://security.ubuntu.com/ubuntu</a> bionic-security main restricted universe multiverse</p>
-<p>deb-src <a href="http://us.archive.ubuntu.com/ubuntu/">http://us.archive.ubuntu.com/ubuntu/</a> bionic main restricted universe multiverse<br>
-deb-src <a href="http://security.ubuntu.com/ubuntu">http://security.ubuntu.com/ubuntu</a> bionic-security main restricted universe multiverse<br>
-deb-src <a href="http://us.archive.ubuntu.com/ubuntu/">http://us.archive.ubuntu.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>
-deb-src <a href="http://us.archive.ubuntu.com/ubuntu/">http://us.archive.ubuntu.com/ubuntu/</a> bionic-updates main restricted universe multiverse</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="toc_1">2. sudo忽略密码<a class="vnote-anchor" href="#toc_1" data-anchor-icon="#"></a></h2>
+<pre><code class="lang-python hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-comment"># The inaccuracy of the floating point makes you not being able to calculate the correct angle between two vectors</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> acos, sqrt</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">angle_1</span><span class="hljs-params">(ux, vx, uy, vy)</span>:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    eq = (ux*vx+uy*vy)/(sqrt(ux**<span class="hljs-number">2</span>+uy**<span class="hljs-number">2</span>)*sqrt(vx**<span class="hljs-number">2</span>+vy**<span class="hljs-number">2</span>))</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">return</span> eq</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">angle_2</span><span class="hljs-params">(ux, vx, uy, vy)</span>:</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    eq = sqrt((ux*vx+uy*vy)**<span class="hljs-number">2</span>/((ux**<span class="hljs-number">2</span>+uy**<span class="hljs-number">2</span>)*(vx**<span class="hljs-number">2</span>+vy**<span class="hljs-number">2</span>)))</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">return</span> eq</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">ux = <span class="hljs-number">195</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">vx = <span class="hljs-number">208</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">uy = <span class="hljs-number">-225</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">vy = <span class="hljs-number">-240</span></div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">a = angle_1(<span class="hljs-number">195</span>, <span class="hljs-number">208</span>, <span class="hljs-number">-225</span>, <span class="hljs-number">-240</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">b = angle_2(<span class="hljs-number">195</span>, <span class="hljs-number">208</span>, <span class="hljs-number">-225</span>, <span class="hljs-number">-240</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> <span class="hljs-string">'%.20f'</span> % a</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> acos(a)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> <span class="hljs-string">'%.20f'</span> % b</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> acos(b)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">a = angle_1(<span class="hljs-number">287</span>, <span class="hljs-number">308</span>, <span class="hljs-number">-82</span>, <span class="hljs-number">-88</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="26"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">b = angle_2(<span class="hljs-number">287</span>, <span class="hljs-number">308</span>, <span class="hljs-number">-82</span>, <span class="hljs-number">-88</span>)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="27"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> <span class="hljs-string">'%.20f'</span> % a</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="28"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> acos(a)</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="29"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> <span class="hljs-string">'%.20f'</span> % b</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="30"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">print</span> acos(b)</div></td></tr></tbody></table></code></pre>
+<h2 id="toc_2">2. 实例2：<a class="vnote-anchor" href="#toc_2" data-anchor-icon="#"></a></h2>
 <ul>
-<li>执行sudo visudo，修改
-<blockquote>
-<p>%sudo ALL=(ALL) NOPASSWD: ALL</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="toc_2">3. 微信<a class="vnote-anchor" href="#toc_2" data-anchor-icon="#"></a></h2>
-<ul>
-<li>
-<p>安装参考<a href="https://bbs.deepin.org/forum.php?mod=viewthread&amp;tid=183464">ubuntu18.04安装新版deepin-wine环境</a></p>
-  <details>
-  <summary>存档备份</summary>
-<ul>
-<li>
-<p>编辑/etc/apt/source.list.d/deepin.list 修改成以下内容</p>
-<blockquote>
-<p>deb [trusted=yes] <a href="https://mirrors.huaweicloud.com/deepin">https://mirrors.huaweicloud.com/deepin</a> stable main contrib non-free</p>
-</blockquote>
-</li>
-<li>
-<p>sudo apt update</p>
-</li>
-<li>
-<p>然后在安装deepin-wine时，添加-t 参数，会优先填补ubuntu 系统源。注意：但是记着在ubuntu 安装完成后一定要把/etc/apt/sources.list.d/deepin.list  删除</p>
-<pre><code class="lang-bash hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    sudo apt install -t bionic deepin.com.wechat -y</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    sudo rm /etc/apt/source.list.d/deepin.list</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">    sudo apt update</div></td></tr></tbody></table></code></pre>
-</li>
-<li>
-<p>如果报公钥无法验证签名的错误，添加apt-key（用错误提示中的key替换掉参数中的key）</p>
-<blockquote>
-<p>sudo apt-key adv --keyserver <a href="http://keyserver.ubuntu.com">keyserver.ubuntu.com</a> --recv-keys 425956BB3E31DF51</p>
-</blockquote>
-</li>
-</ul>
-  </details>
-</li>
-<li>
-<p>中文显示为黑色长方条：参考<a href="https://www.chengxuzhilu.com/2249.html">Ubuntu18.04/20.04 上 Deepin-Wechat 中文显示为方块的解决方案</a></p>
-  <details>
-  <summary>存档备份</summary>
-<ul>
-<li>下载“微软雅黑”字体<br>
-到 <a href="https://www.lanzous.com/i5wivmd">https://www.lanzous.com/i5wivmd</a> 下载字体，然后解压，得到字体文件 msyh.ttc 。</li>
-<li>將字体复制到指定的位置：
-<blockquote>
-<p>cp /path/to/msyh.ttc ~/.deepinwine/Deepin-WeChat/drive_c/windows/Fonts</p>
-</blockquote>
-</li>
-<li>將字体注册到 Wine：
-<blockquote>
-<p>vim ~/.deepinwine/Deepin-WeChat/font.reg</p>
-</blockquote>
-</li>
-<li>键入以下内容，并保存：<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">REGEDIT4</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"MS Shell Dlg"="msyh"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"MS Shell Dlg 2"="msyh"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"Lucida Sans Unicode"="msyh.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"Microsoft Sans Serif"="msyh.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"MS Sans Serif"="msyh.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"Tahoma"="msyh.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"Tahoma Bold"="msyhbd.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"msyh"="msyh.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"Arial"="msyh.ttc"</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">"Arial Black"="msyh.ttc"</div></td></tr></tbody></table></code></pre>
-</li>
-<li>注册 font.reg：<br>
-在终端执行：
-<blockquote>
-<p>WINEPREFIX=~/.deepinwine/Deepin-WeChat/ deepin-wine regedit ~/.deepinwine/Deepin-WeChat/font.reg</p>
-</blockquote>
-</li>
-<li>重新运行微信。</li>
-<li><a href="http://xn--run-628dz9fq84cszaw54a6hdgr8h394a.sh">此方法不需要修改run.sh</a></li>
-</ul>
-  </details>
-</li>
-<li>
-<p>黑色正方形<br>
-输入任何一个和添加的表情相关连的词语呼出备选表情</p>
-</li>
-<li>
-<p>任务栏图标</p>
-<ul>
-<li>sudo apt install gnome-shell-extensions</li>
-<li>sudo apt install gnome-shell-extension-top-icons-plus</li>
-<li>在app的Tweaks有个Extension的栏，在其中有Topicons plus的始能选项。</li>
-</ul>
-</li>
-</ul>
-<h2 id="toc_3">4. CUDA配置<a class="vnote-anchor" href="#toc_3" data-anchor-icon="#"></a></h2>
-<ul>
-<li>配置CUDA环境
-<ul>
-<li>Run file中已经包含了对应的最新驱动，按照cuda-installation-guide-linux中Disabling Nouveau一节的方法禁用默认驱动，然后运行runfile安装driver和CUDA</li>
-<li>完成后会提示<pre><code class="hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">===========</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">= Summary =</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">===========</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">Driver:   Installed</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">Toolkit:  Installed in /usr/local/cuda-11.1/</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">Samples:  Installed in /home/terry/, but missing recommended libraries</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">Please make sure that</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> -   PATH includes /usr/local/cuda-11.1/bin</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> -   LD_LIBRARY_PATH includes /usr/local/cuda-11.1/lib64, or, add /usr/local/cuda-11.1/lib64 to /etc/ld.so.conf and run ldconfig as root</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-11.1/bin</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">To uninstall the NVIDIA Driver, run nvidia-uninstall</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line">Logfile is /var/log/cuda-installer.log</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"> </div></td></tr></tbody></table></code></pre>
-</li>
-<li>第八节post-installation actions中执行export后不能永久保存设定的PATH，需要将其导入profile（多用户共享）或者bashrc（当前用户）中。<pre><code class="lang-bash hljs"><table class="hljs-ln"><tbody><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-built_in">echo</span> <span class="hljs-string">"export PATH=/usr/local/cuda-11.1/bin<span class="hljs-variable">${PATH:+:${PATH}</span>}"</span> &gt;&gt; ~/.profile</div></td></tr><tr><td class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></td><td class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-built_in">source</span> ~/.profile</div></td></tr></tbody></table></code></pre>
-</li>
-</ul>
-</li>
+<li>加法顺序不同导致计算产生误差</li>
 </ul>
 
     </div>
