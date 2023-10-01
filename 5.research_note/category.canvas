@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"type":"text","text":"## Other form\n- Aerial, Marine, Art and Entertainment / Space Robotics\n- Cellular, Modular, and Parallel Robots\n- Robotics and Automation in Agriculture and Forestry\n- Wearable Robots and Interfaces\n- Field Robotics\n- Micro/Nano Robots\n- Aerial Systems: Perception and Autonomy\n- Bioinspired and Biometic Systems","id":"f590b387b0b0d15c","x":-281,"y":-532,"width":509,"height":452},
+		{"type":"text","text":"## Autonomous vehicle navigation/localization/mapping\n- SLAM\n- LiDAR","id":"778a26552ffa5367","x":-281,"y":308,"width":475,"height":292},
+		{"type":"text","text":"## human robot interaction\n- Physical HRI\n- Human-Robot Collaboration\n- Intent and Gesture Recognition\n- Human Robot Teams and Physical Collaboration\n- Human-Aware Motion Planning\n- Social Robotics and Collaboration\n- Telerobotics\n- ","id":"70d9c722b0cffa6c","x":97,"y":1297,"width":630,"height":463},
+		{"type":"text","text":"# Robot form","id":"2befecfba2add3c1","x":-392,"y":-896,"width":349,"height":89},
+		{"type":"text","text":"## medical robot\n- Medical Robotics, Prosthetics, and Systems\n- Rehabilitation, Surgical Robotics\n- Prosthetics and Exoskeletons\n- Surgical Robotics: Steerable Catheters and Needles","id":"afc92ef045efc60b","x":-896,"y":-468,"width":504,"height":288},
+		{"type":"text","text":"## soft robot\n- Modeling, Control, and Learning for Soft Robots\n- Soft Robot Materials and Design\n- Soft Robot Applications\n- Soft Sensors and Actuators\n- Soft Robot Materials, Models, and Design\n","id":"57af3e6b1ff8a9c5","x":-1614,"y":-468,"width":615,"height":288},
+		{"type":"text","text":"## learning\n- Deep Learning for Perception, Visual Perception\n- Deep Learning for Robotic Systems \n- Reinforcement Learning for Mobile Robots\n- Imitation Learning, Learning from Demonstration, Representation Learning, Continual Learning and Transfer\n- Reinforcement Learning\n- Deep Learning in Grasping and Manipulation\n- Planning and Learning\n- Multi-Robot Learning\n- Learning for Control\n- Machine Learning for Robotics","id":"9e0436aa63ee2855","x":874,"y":-197,"width":585,"height":565},
+		{"type":"text","text":"## Multi-Robot and Swarm Robotic\n- Path Planning for Multi Robots","id":"33ae5f2ad3b510ab","x":336,"y":-502,"width":478,"height":234},
+		{"type":"text","text":"## slam and localization\n- SLAM and Exploration\n- Vision-Based Navigation\n- Visual-Inertial SLAM\n-  Localization and Mapping\n- Semantic Scene Understanding","id":"64c900dc0e222cab","x":-853,"y":919,"width":419,"height":301},
+		{"type":"text","text":"## Legged robot\n- Humanoids and Legged Locomotion\n- Humanoid Systems\n- Climbing, Walking, and Whole Body Control","id":"621861e866e7e634","x":-1982,"y":-463,"width":273,"height":195},
+		{"type":"text","text":"## Task, Motion and Path Planning","id":"1fa24fb75efd5152","x":-602,"y":1354,"width":576,"height":325},
+		{"type":"text","text":"Integrated Planning and Learning","id":"5ab20841da6db9a5","x":477,"y":308,"width":250,"height":146},
+		{"type":"text","text":"# control method\n- Optimization and Optimal Control\n- Formal Methods in Robotics and Automation\n- Planning and Control\n- Force and Impedance Control","id":"a10e1cde1bb922a5","x":915,"y":583,"width":504,"height":336},
+		{"type":"text","text":"# Perception\n- RGB-D Perception\n- Force and Tactile Sensing\n- Perceptions, Actions, and Bio-Inspired Robotics\n- Sensing and Dynamics\n- Object Detection, Segmentation and Categorization\n- Computer Vision for Automation\n- Human Detection, Tracking, and Modeling\n- Sensor Fusion\n- Tactile Sensors\n-  Contact Modeling, Grippers, and Other End-Effectors","id":"6c54aaaa875c88b8","x":-1404,"y":1310,"width":457,"height":610},
+		{"type":"text","text":"## manipulation\n- Perception for Grasping and Manipulation\n- Manipulation Planning\n- Mobile Manipulation\n- Dexterous and In-Hand Manipulation\n- Grasping and Multifingered Hands","id":"87548e874a9a2c89","x":874,"y":1131,"width":498,"height":332},
+		{"type":"text","text":"Machine Learning and Human Factors for Robotics","id":"4e329d8c64d44b78","x":256,"y":919,"width":471,"height":143}
+	],
+	"edges":[
+		{"id":"da4e587329d0b8e3","fromNode":"f590b387b0b0d15c","fromSide":"bottom","toNode":"778a26552ffa5367","toSide":"top"},
+		{"id":"74e6ddd388530661","fromNode":"64c900dc0e222cab","fromSide":"right","toNode":"778a26552ffa5367","toSide":"bottom"},
+		{"id":"eb18f53fb4894483","fromNode":"9e0436aa63ee2855","fromSide":"bottom","toNode":"4e329d8c64d44b78","toSide":"top"},
+		{"id":"385d494fdb2fc2da","fromNode":"2befecfba2add3c1","fromSide":"bottom","toNode":"f590b387b0b0d15c","toSide":"top"},
+		{"id":"6aac6200333e1239","fromNode":"2befecfba2add3c1","fromSide":"bottom","toNode":"afc92ef045efc60b","toSide":"top"},
+		{"id":"4eb01f00d6062d6c","fromNode":"2befecfba2add3c1","fromSide":"bottom","toNode":"57af3e6b1ff8a9c5","toSide":"top"},
+		{"id":"24e93ed1a6072e9e","fromNode":"2befecfba2add3c1","fromSide":"bottom","toNode":"33ae5f2ad3b510ab","toSide":"top"},
+		{"id":"7a3f7cbfbcddb1f5","fromNode":"9e0436aa63ee2855","fromSide":"left","toNode":"5ab20841da6db9a5","toSide":"top"},
+		{"id":"a5f14a8a2b7bbaf2","fromNode":"1fa24fb75efd5152","fromSide":"top","toNode":"5ab20841da6db9a5","toSide":"bottom"},
+		{"id":"616c421eb81fb318","fromNode":"70d9c722b0cffa6c","fromSide":"top","toNode":"4e329d8c64d44b78","toSide":"bottom"}
+	]
+}

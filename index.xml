@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Z&#039;s learning note</title>
+      <link>https://zhyma.github.io</link>
+      <description>Last 10 notes on Z's learning note</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>deformable</title>
+    <link>https://zhyma.github.io/0.paper/cv/deformable</link>
+    <guid>https://zhyma.github.io/0.paper/cv/deformable</guid>
+    <description>Deformable object § ##Deformable linear object detection.</description>
+    <pubDate>Thu, 11 Aug 2022 17:25:29 GMT</pubDate>
+  </item><item>
+    <title>dlo_detection</title>
+    <link>https://zhyma.github.io/0.paper/cv/dlo_detection</link>
+    <guid>https://zhyma.github.io/0.paper/cv/dlo_detection</guid>
+    <description>amusi/awesome-object-detection § https://github.com/amusi/awesome-object-detectionc Deformable linear object detection § Fast, accurate thin-structure obstacle detection for autonomous mobile robots § Chen Zhou et al.</description>
+    <pubDate>Tue, 20 Jul 2021 00:19:38 GMT</pubDate>
+  </item><item>
+    <title>segmentation_overview</title>
+    <link>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_overview</link>
+    <guid>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_overview</guid>
+    <description>Segment anything § Alexander Kirillov et al., Meta, 2023 https://arxiv.org/abs/2304.02643 Code § 初始化： sam_checkpoint = &quot;segment-anything/model/sam_vit_h_4b8939.</description>
+    <pubDate>Sun, 23 Apr 2023 21:39:48 GMT</pubDate>
+  </item><item>
+    <title>segmentation_semantic</title>
+    <link>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_semantic</link>
+    <guid>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_semantic</guid>
+    <description>Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation § Liang-Chieh Chen et al., ECCV2018 语义分割 空洞卷积（Dilated Convolution）/扩张卷积（Atrous Convolution） DeepLabV3+ Pytorch版本 Review the state-of-the-art technologies of semantic segmentation based on deep learning § Yujian Mo et al.</description>
+    <pubDate>Fri, 12 Aug 2022 15:04:48 GMT</pubDate>
+  </item><item>
+    <title>security_game</title>
+    <link>https://zhyma.github.io/0.paper/game_theory/security_game</link>
+    <guid>https://zhyma.github.io/0.paper/game_theory/security_game</guid>
+    <description>1. [50%]Synthesis of deceptive strategies in reachability games with action misperception § Abhishek N. Kulkarni et al., IJCAI 2020 Main problem to solve: two player (P1, P2) plays a turn-based game, P2 knows part of P1’s action and try to prevent P1 from reaching the goal.</description>
+    <pubDate>Sat, 20 Feb 2021 17:56:46 GMT</pubDate>
+  </item><item>
+    <title>stackelberg</title>
+    <link>https://zhyma.github.io/0.paper/game_theory/stackelberg</link>
+    <guid>https://zhyma.github.io/0.paper/game_theory/stackelberg</guid>
+    <description>Stackelberg games § 1. Summary：Stackelberg game的关键问题 § 1.1. 基础： § Game中有一个attacker，一个defender。Defender先行（leader），attacker后行（follower）。 Attacker应是model-based：具有自己的optimal function。举例而言attacker可能具有一定的optimal function（线性/非线性方程），或者在MDP的环境下具有自己的optimal policy（以下都用optimal function代表）。一般attacker已知defender的策略，在该前提下最大化自己的收益。 Defender对attacker有一定认识，理想情况是完全获知attacker的optimal function。进阶情况为defender只有关于attacker的部分知识或者不准确的知识。Defender的策略建立在对attacker的了解之上，如何通过对已知attacker的知识去优化自己的策略，从而最小化attacker的收益。 Defender可能采用pure strategey或者mixed strategy（multiple types，通过一定概率选取type，更具优势）。 Attacker的optimal function： 可以是给定的、部分给定，通过统计模型获知（PAC model）等等 回合制：Stackelberg game可以是单一回合制的，即defender在一开始制定好策略，部署后attacker行动，通过attacker的收益衡量defender的策略。也可以是多回合制（repeated game），defender部署一个策略，attacker行动，defender在此基础上再部署新的策略，以此往复。 多回合制时defender需要考虑： Defender需要考虑随后的若干步attacker的策略（可以类比于用RL为之前的reward设置）从而选择当前策略。 更进一步的，若对attacker的optimal function只有部分知识，需要平衡exploitation与exploration，同时保证一定的收益。（如何学习attacker的function） 1.</description>
+    <pubDate>Mon, 14 Dec 2020 20:15:03 GMT</pubDate>
+  </item><item>
+    <title>vehicle_control</title>
+    <link>https://zhyma.github.io/0.paper/ground_vehicle/vehicle_control</link>
+    <guid>https://zhyma.github.io/0.paper/ground_vehicle/vehicle_control</guid>
+    <description>Vehicle Control § A parallel hybrid electric vehicle energy management strategy using stochastic model predictive control with road grade preview § Xiangrui Zeng et al.</description>
+    <pubDate>Thu, 17 Dec 2020 15:16:23 GMT</pubDate>
+  </item><item>
+    <title>vehicle_simulation</title>
+    <link>https://zhyma.github.io/0.paper/ground_vehicle/vehicle_simulation</link>
+    <guid>https://zhyma.github.io/0.paper/ground_vehicle/vehicle_simulation</guid>
+    <description> Traffic dynamics: studies in car following § Robert E. Chandler, et al., Operations Research 1958 Theory of following the leader Proportionate control Response lag Constant spacing California code: “A good rule for following another vehicle at a safe distance is to allow yourself the length of a car (about fifteen feet) for every ten miles per hour you are traveling” where is the standard distance between vehicles at rest, is the length of the th vehicle, and is the time constant inferred by the California Code Propagation of a perturbation Velocity-dependent sensitivity Emergency control Congested traffic states in empirical observations and microscopic simulations § Martin Treiber, et al.</description>
+    <pubDate>Thu, 25 Mar 2021 21:03:09 GMT</pubDate>
+  </item><item>
+    <title>interesting_robot_form</title>
+    <link>https://zhyma.github.io/0.paper/interesting_robot_form</link>
+    <guid>https://zhyma.github.io/0.paper/interesting_robot_form</guid>
+    <description>Modeling, identification and control of model jet engines for jet powered robotics § Giuseppe L’Erario et al., RAL 2020, link Progress: 10% § 主要工作 § Design a procedure of how to modeling, identify and control model jet engines.</description>
+    <pubDate>Thu, 17 Dec 2020 15:11:51 GMT</pubDate>
+  </item><item>
+    <title>clustering</title>
+    <link>https://zhyma.github.io/0.paper/machine_learning_general/clustering</link>
+    <guid>https://zhyma.github.io/0.paper/machine_learning_general/clustering</guid>
+    <description>A Density-Based Algorithm for Discovering Clusters § Martin Ester et al., U Munich, KDD96 DBSCAN经典论文！(完整标题：A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise) .</description>
+    <pubDate>Fri, 26 Aug 2022 17:05:43 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
