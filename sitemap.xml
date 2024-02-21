@@ -5,7 +5,7 @@
     <loc>https://zhyma.github.io/0.paper/cv/dlo_detection</loc>
     <lastmod>2021-07-20T00:19:38.286Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_overview</loc>
+    <loc>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_general</loc>
     <lastmod>2023-04-23T21:39:48.333Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_semantic</loc>
@@ -71,8 +71,14 @@
     <loc>https://zhyma.github.io/0.paper/manipulation/deformable_object/deformable_object</loc>
     <lastmod>2023-06-26T22:37:36.786Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/0.paper/manipulation/grasping</loc>
+    <lastmod>2023-12-19T23:29:07.727Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/0.paper/manipulation/manipulation</loc>
     <lastmod>2022-08-26T16:52:19.757Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/0.paper/manipulation/redundant_manipulators</loc>
+    <lastmod>2023-10-22T19:11:02.340Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/0.paper/mpc/MPC-application</loc>
     <lastmod>2020-12-18T23:00:48.859Z</lastmod>
@@ -101,17 +107,11 @@
     <loc>https://zhyma.github.io/0.paper/simulation</loc>
     <lastmod>2022-06-05T14:58:48.846Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/0.paper/sort_by_robot_conference/case2022</loc>
-    <lastmod>2023-01-31T19:06:14.837Z</lastmod>
-  </url><url>
-    <loc>https://zhyma.github.io/0.paper/sort_by_robot_conference/icra2022</loc>
-    <lastmod>2023-01-14T23:18:48.664Z</lastmod>
-  </url><url>
-    <loc>https://zhyma.github.io/0.paper/sort_by_robot_conference/iros2022</loc>
-    <lastmod>2023-01-15T02:44:39.785Z</lastmod>
-  </url><url>
     <loc>https://zhyma.github.io/0.paper/tactile</loc>
     <lastmod>2023-03-31T20:38:19.757Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/0.paper/task_planning</loc>
+    <lastmod>2023-12-26T03:54:07.795Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/0.paper/uncategorized</loc>
     <lastmod>2020-12-17T15:10:51.571Z</lastmod>
@@ -155,14 +155,8 @@
     <loc>https://zhyma.github.io/1.theory/computer_graphics/collision_detection_overview</loc>
     <lastmod>2023-07-28T20:52:50.416Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/1.theory/computer_graphics/computer_graphic</loc>
-    <lastmod>2022-11-06T15:39:49.029Z</lastmod>
-  </url><url>
     <loc>https://zhyma.github.io/1.theory/computer_vision/cv_overview</loc>
     <lastmod>2022-05-04T21:00:34.270Z</lastmod>
-  </url><url>
-    <loc>https://zhyma.github.io/1.theory/computer_vision/cv_project</loc>
-    <lastmod>2022-08-12T13:49:18.928Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/1.theory/computer_vision/segmentation</loc>
     <lastmod>2022-08-12T15:21:56.578Z</lastmod>
@@ -221,6 +215,9 @@
     <loc>https://zhyma.github.io/1.theory/math/plane_geometry</loc>
     <lastmod>2023-02-21T00:06:46.842Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/1.theory/math/statistics</loc>
+    <lastmod>2023-12-26T13:46:03.213Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/1.theory/robot_basics/0.kinematics/coordinate</loc>
     <lastmod>2022-05-08T02:35:52.550Z</lastmod>
   </url><url>
@@ -260,14 +257,17 @@
     <loc>https://zhyma.github.io/1.theory/robot_basics/1.dynamics/dynamics_overview</loc>
     <lastmod>2022-01-20T09:10:12.681Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/1.theory/robot_basics/2.motion_planning/0.motion_planning_overview</loc>
+    <lastmod>2022-11-06T15:44:01.119Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/1.theory/robot_basics/2.motion_planning/bimanual_mp</loc>
+    <lastmod>2023-12-19T23:29:06.694Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/1.theory/robot_basics/inverse_kinematic</loc>
     <lastmod>2022-03-18T22:33:44.037Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/1.theory/robot_basics/legged_robot</loc>
     <lastmod>2023-01-19T02:03:51.355Z</lastmod>
-  </url><url>
-    <loc>https://zhyma.github.io/1.theory/robot_basics/motion_planning</loc>
-    <lastmod>2022-11-06T15:44:01.119Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/1.theory/robot_basics/zz.handwritten/z.Drawing-2022-01-17-17.19.51.excalidraw</loc>
     <lastmod>2022-01-18T07:19:51.567Z</lastmod>
@@ -317,6 +317,9 @@
     <loc>https://zhyma.github.io/2.application/robotics/0.application_overview</loc>
     <lastmod>2023-08-10T21:47:16.586Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/2.application/robotics/actual_robots/robot_list</loc>
+    <lastmod>2023-11-16T23:48:02.339Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/2.application/robotics/actual_robots/ur_robot/ur_robot</loc>
     <lastmod>2023-02-19T16:35:15.085Z</lastmod>
   </url><url>
@@ -356,9 +359,6 @@
     <loc>https://zhyma.github.io/2.application/robotics/robot_hardware/sensors</loc>
     <lastmod>2023-08-31T22:07:04.964Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/2.application/robotics/robot_software/ar_bar_code</loc>
-    <lastmod>2022-05-08T03:11:42.200Z</lastmod>
-  </url><url>
     <loc>https://zhyma.github.io/2.application/robotics/robot_software/computer_vision/opencv/opencv_basic</loc>
     <lastmod>2022-05-18T22:00:53.695Z</lastmod>
   </url><url>
@@ -373,6 +373,9 @@
   </url><url>
     <loc>https://zhyma.github.io/2.application/robotics/robot_software/computer_vision/opencv/opencv_similiarity</loc>
     <lastmod>2023-09-01T13:12:21.716Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/2.application/robotics/robot_software/fiducial_marker</loc>
+    <lastmod>2022-05-08T03:11:42.200Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/2.application/robotics/robot_software/ik/kdl</loc>
     <lastmod>2022-07-27T00:14:34.399Z</lastmod>
@@ -533,9 +536,6 @@
     <loc>https://zhyma.github.io/3.hardware/EE/connector</loc>
     <lastmod>2023-04-12T21:57:37.055Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/3.hardware/EE/ic</loc>
-    <lastmod>2023-04-04T02:17:31.521Z</lastmod>
-  </url><url>
     <loc>https://zhyma.github.io/3.hardware/EE/mcu/arduino</loc>
     <lastmod>2023-06-20T04:36:13.629Z</lastmod>
   </url><url>
@@ -554,16 +554,16 @@
     <loc>https://zhyma.github.io/3.hardware/EE/mcu/mcu_overview</loc>
     <lastmod>2023-03-04T22:36:11.608Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/3.hardware/EE/mcu/stc</loc>
-    <lastmod>2023-06-20T04:39:28.443Z</lastmod>
-  </url><url>
     <loc>https://zhyma.github.io/3.hardware/EE/mcu/stm32</loc>
     <lastmod>2022-01-29T22:36:30.555Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/3.hardware/EE/module/communication</loc>
+    <lastmod>2023-10-23T00:30:55.923Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/3.hardware/EE/module/design_module</loc>
     <lastmod>2023-02-12T15:26:11.146Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/3.hardware/EE/module/display/0.display_overview</loc>
+    <loc>https://zhyma.github.io/3.hardware/EE/module/display/0.oled_overview</loc>
     <lastmod>2023-02-10T13:02:05.282Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/3.hardware/EE/module/display/ch1115</loc>
@@ -578,7 +578,7 @@
     <loc>https://zhyma.github.io/3.hardware/EE/module/pneumatic</loc>
     <lastmod>2023-07-30T15:17:18.881Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/3.hardware/EE/module/sensors_module</loc>
+    <loc>https://zhyma.github.io/3.hardware/EE/module/sensors</loc>
     <lastmod>2023-06-07T20:24:00.135Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/3.hardware/EE/motor</loc>
@@ -608,6 +608,9 @@
     <loc>https://zhyma.github.io/3.hardware/mech/general</loc>
     <lastmod>2023-01-08T23:24:07.237Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/3.hardware/mech/pin</loc>
+    <lastmod>2023-11-06T05:19:14.554Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/4.software/3d_design_tools/Meshmixer</loc>
     <lastmod>2022-06-11T03:16:01.794Z</lastmod>
   </url><url>
@@ -631,6 +634,9 @@
   </url><url>
     <loc>https://zhyma.github.io/4.software/hexo</loc>
     <lastmod>2022-11-19T15:40:26.626Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/4.software/macos</loc>
+    <lastmod>2024-01-04T22:54:08.171Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/4.software/pcb_design_tools/cadance</loc>
     <lastmod>2023-01-08T22:57:35.769Z</lastmod>
@@ -677,11 +683,17 @@
     <loc>https://zhyma.github.io/4.software/programming_language/python/plotly</loc>
     <lastmod>2023-05-28T14:35:23.854Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/4.software/programming_language/python/py_xml</loc>
+    <lastmod>2023-11-02T22:57:21.821Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/4.software/programming_language/python/pybox2d</loc>
     <lastmod>2021-09-01T17:11:54.042Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/4.software/programming_language/python/pyppeteer</loc>
     <lastmod>2022-06-10T02:29:14.706Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/4.software/programming_language/python/pyqt5</loc>
+    <lastmod>2024-01-16T01:52:15.415Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/4.software/programming_language/python/pytorch</loc>
     <lastmod>2020-12-19T20:23:12.671Z</lastmod>
@@ -764,28 +776,34 @@
     <loc>https://zhyma.github.io/5.research_note/methodology/03.robot_design_concept</loc>
     <lastmod>2023-05-31T20:30:07.217Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/10.reading</loc>
+    <loc>https://zhyma.github.io/5.research_note/methodology/10.meeting</loc>
+    <lastmod>2023-11-08T00:49:27.698Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/20.reading</loc>
     <lastmod>2022-08-26T22:31:54.457Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/20.writing</loc>
+    <loc>https://zhyma.github.io/5.research_note/methodology/30.writing</loc>
     <lastmod>2022-08-26T17:29:20.997Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/21.figures</loc>
+    <loc>https://zhyma.github.io/5.research_note/methodology/31.figures</loc>
     <lastmod>2023-05-09T20:09:25.829Z</lastmod>
-  </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/25.thesis</loc>
-    <lastmod>2023-05-17T16:38:45.880Z</lastmod>
-  </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/30.video</loc>
-    <lastmod>2023-07-17T02:17:33.146Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/5.research_note/methodology/31.post_on_arxiv</loc>
     <lastmod>2023-02-21T18:08:56.484Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/32.poster</loc>
+    <loc>https://zhyma.github.io/5.research_note/methodology/35.thesis</loc>
+    <lastmod>2023-05-17T16:38:45.880Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/40.slides</loc>
+    <lastmod>2023-11-14T22:28:13.770Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/42.poster</loc>
     <lastmod>2023-01-17T18:07:29.850Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/methodology/40.response_n_review</loc>
+    <loc>https://zhyma.github.io/5.research_note/methodology/50.video</loc>
+    <lastmod>2023-07-17T02:17:33.146Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/60.response_n_review</loc>
     <lastmod>2023-01-17T03:59:12.890Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/5.research_note/methodology/website</loc>
@@ -800,20 +818,29 @@
     <loc>https://zhyma.github.io/5.research_note/methodology/writing_example/20.review_01</loc>
     <lastmod>2023-04-26T18:43:23.970Z</lastmod>
   </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/wrtting4ieee/ieee_general</loc>
+    <lastmod>2023-01-12T22:40:54.986Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/wrtting4ieee/ral_writing</loc>
+    <lastmod>2022-12-11T04:25:40.812Z</lastmod>
+  </url><url>
+    <loc>https://zhyma.github.io/5.research_note/methodology/wrtting4ieee/writing_reference</loc>
+    <lastmod>2023-01-14T00:37:40.038Z</lastmod>
+  </url><url>
     <loc>https://zhyma.github.io/5.research_note/robot_conf_n_trans</loc>
     <lastmod>2022-08-29T02:39:49.040Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/5.research_note/teaching</loc>
     <lastmod>2023-09-14T13:49:49.427Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/wrtting4ieee/ieee_general</loc>
-    <lastmod>2023-01-12T22:40:54.986Z</lastmod>
+    <loc>https://zhyma.github.io/6.hobby/rc/edge_tx</loc>
+    <lastmod>2023-11-24T23:37:19.709Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/wrtting4ieee/ral_writing</loc>
-    <lastmod>2022-12-11T04:25:40.812Z</lastmod>
+    <loc>https://zhyma.github.io/6.hobby/rc/quad_debug</loc>
+    <lastmod>2024-01-12T02:47:10.164Z</lastmod>
   </url><url>
-    <loc>https://zhyma.github.io/5.research_note/wrtting4ieee/writing_reference</loc>
-    <lastmod>2023-01-14T00:37:40.038Z</lastmod>
+    <loc>https://zhyma.github.io/6.hobby/rc/quadcopter_overview</loc>
+    <lastmod>2023-11-08T00:49:19.866Z</lastmod>
   </url><url>
     <loc>https://zhyma.github.io/</loc>
     <lastmod>2023-09-15T20:24:56.512Z</lastmod>

@@ -15,13 +15,13 @@
     <title>dlo_detection</title>
     <link>https://zhyma.github.io/0.paper/cv/dlo_detection</link>
     <guid>https://zhyma.github.io/0.paper/cv/dlo_detection</guid>
-    <description>amusi/awesome-object-detection § https://github.com/amusi/awesome-object-detectionc Deformable linear object detection § Fast, accurate thin-structure obstacle detection for autonomous mobile robots § Chen Zhou et al.</description>
+    <description>Deformable linear object detection § Fast, accurate thin-structure obstacle detection for autonomous mobile robots § Chen Zhou et al., CVPR workshop 2017 Progress 30%, link 要解决的问题：detect thin-structure obstacle (wires, cables, tree branches) 解决方案：edge-based visual odometry techniques Perform thin obstacle detection using video sequences from a monocular camera or a stereo camera pair 具体方案 Edge extraction: DoG (Difference of Gaussians) detector for edge detection + a consequent Canny-style hypothesis linking step 选择DoG的原因：its good repetitivity 使用hypothesis linking step的原因：improve the recall of weak edges which are common on thin obstacles Edge 3D reconstruction Monocular camera: VO (Visual Odometry) algorithm Incorporating IMU data Stereo camera Edge-based stereo matching Obstacle labeling on edge depth maps DROAN - Disparity-Space Representation for Obstacle Avoidance: Enabling Wire Mapping amp; Avoidance § Geetesh Dubey et al.</description>
     <pubDate>Tue, 20 Jul 2021 00:19:38 GMT</pubDate>
   </item><item>
-    <title>segmentation_overview</title>
-    <link>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_overview</link>
-    <guid>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_overview</guid>
-    <description>Segment anything § Alexander Kirillov et al., Meta, 2023 https://arxiv.org/abs/2304.02643 Code § 初始化： sam_checkpoint = &quot;segment-anything/model/sam_vit_h_4b8939.</description>
+    <title>segmentation_general</title>
+    <link>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_general</link>
+    <guid>https://zhyma.github.io/0.paper/cv/segmentation/segmentation_general</guid>
+    <description>#sam Segment anything § Alexander Kirillov et al., Meta, 2023 https://arxiv.org/abs/2304.02643 Code § 初始化： sam_checkpoint = &quot;segment-anything/model/sam_vit_h_4b8939.</description>
     <pubDate>Sun, 23 Apr 2023 21:39:48 GMT</pubDate>
   </item><item>
     <title>segmentation_semantic</title>
